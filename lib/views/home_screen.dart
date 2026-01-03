@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Homepage_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   // Cette variable va recevoir les données de l'utilisateur envoyées par le backend
   final Map<String, dynamic> user;
@@ -36,7 +38,10 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context); // Retour à la page de connexion
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                ); // Retour à la page de connexion
               },
               child: Text("Se déconnecter"),
             ),

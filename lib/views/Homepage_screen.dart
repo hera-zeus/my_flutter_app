@@ -14,7 +14,12 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const RegisterOwnerPage(role: 'proprietaire'),
+              ),
+            ),
             child: const Text(
               "Je m'inscris",
               style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
@@ -96,7 +101,7 @@ class HomePage extends StatelessWidget {
                     Icons.people_outline,
                     "Je suis\nvétérinaire/élu",
                     false,
-                        () => Navigator.push(
+                    () => Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const LoginScreen(role: 'veterinaire')),
                     ),
@@ -106,7 +111,7 @@ class HomePage extends StatelessWidget {
                     Icons.pets,
                     "Je suis\npropriétaire d'animaux",
                     true,
-                        () => Navigator.push(
+                    () => Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const RegisterOwnerPage(role: 'proprietaire')),
                     ),
